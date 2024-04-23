@@ -201,11 +201,3 @@ class PhineasSentimentAnalyzer:
 
     def extract(self, comment):
         return self.__extract_features(comment, self.pos_list, self.neg_list, self.freqs)
-    
-
-model = PhineasSentimentAnalyzer()
-model.train()
-sentence = "Finding a job is a difficult thing."
-print("Score: ", model.predict_score(sentence))
-print("Negative") if model.predict_score(sentence) < 0.5 else print("Positive")
-model.extract(sentence)
